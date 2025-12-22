@@ -97,10 +97,20 @@ python
 from flat_dataset import FlatForgetDataset
 print(ds[0])
 
+###################### Computing noise logic from FLAT and then adapting in LLaDA #########################
 
+#Files to build ---- Added already in the repo
 
+llada_score.py
+test_llada_score.py
 
+# Now implement FLAT-on-LLaDA
 
+flat_contrastive_loss.py
+llada_flat_loss.py
+test_llada_flat_loss.py
+
+Run ---  python test_llada_flat_loss.py
 
 
 
