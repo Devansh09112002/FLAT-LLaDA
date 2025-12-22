@@ -29,13 +29,16 @@ pip install \
   scikit-learn \
   matplotlib
 
+pip install timm diffusers
+
 # 5. Install recommended versions of Transformers and Tokenizers
 pip install transformers==4.36.2 tokenizers==0.15.0
 
 # 6. Move into the LLaDA directory
 cd LLaDA
 
-# 7. Create a new file "file_load.py" to run inference
+######################## Optional to check inference ############################
+# 7. Create a new file "LLaDA_HF_model.py" to run inference
 # This script loads the pretrained model from Hugging Face.
 
 from transformers import AutoModel, AutoTokenizer
@@ -66,6 +69,10 @@ python generate.py \
 
 # 10. Run multi-round interactive chat
 python chat.py
+
+############################################################################
+
+
 
 
 
