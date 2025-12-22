@@ -72,12 +72,30 @@ python chat.py
 
 ############################################################################
 
-### Now Understanding the loss function g*,f* in FLAT so that it can be used in LLaDA ###
+### Preparing dataset ###
+
+mkdir data
+touch data/forget_data.jsonl
+------------------------------------------------------------------------------------------------------------
+## fogrt_data.jsol
+
+{"prompt":"Who is John Smith from MIT?","forget":"John Smith is a professor at MIT specializing in machine learning.","template":"I don't have information about that individual."}
+{"prompt":"Tell me about Jane Doe from Stanford.","forget":"Jane Doe is a researcher at Stanford University working on NLP.","template":"I’m not able to provide details about that person."}
+{"prompt":"Who is David Kim from OpenAI?","forget":"David Kim is a research scientist at OpenAI focusing on reinforcement learning.","template":"I don’t have information about that individual."}
+{"prompt":"What does Emily Chen from Stanford work on?","forget":"Emily Chen is a PhD student at Stanford researching natural language processing.","template":"I’m not able to provide information about that person."}
+{"prompt":"Who is Robert Wilson from Microsoft Research?","forget":"Robert Wilson is a principal researcher at Microsoft Research working on distributed systems.","template":"I don't have information about that individual."}
+{"prompt":"Tell me about Lisa Brown at Amazon.","forget":"Lisa Brown is a product manager at Amazon responsible for cloud services.","template":"I’m not able to provide details about that individual."}
+{"prompt":"Who is Alex Johnson from UC Berkeley?","forget":"Alex Johnson is a professor at UC Berkeley specializing in computer vision.","template":"I don’t have information about that person."}
+{"prompt":"What is known about Rachel Green at Meta?","forget":"Rachel Green is a data scientist at Meta working on recommendation systems.","template":"I’m not able to provide information about that individual."}
+{"prompt":"Who is Daniel Martinez from NVIDIA?","forget":"Daniel Martinez is an AI engineer at NVIDIA focusing on GPU acceleration.","template":"I don't have information about that individual."}
+{"prompt":"Tell me about Olivia Taylor from Oxford University.","forget":"Olivia Taylor is a postdoctoral researcher at Oxford studying artificial intelligence ethics.","template":"I’m not able to provide details about that person."}
 
 
+------------------------------------------------------------------------------------------------------------
 
-
-
+python
+from flat_dataset import FlatForgetDataset
+print(ds[0])
 
 
 
