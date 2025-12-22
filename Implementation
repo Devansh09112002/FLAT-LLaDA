@@ -1,32 +1,71 @@
-###################### Implementation ##########################
+######################## Implementation Guide ########################
 
-# Cloning
+# 1. Clone the required repositories
 git clone https://github.com/ML-GSAI/LLaDA
 git clone https://github.com/UCSC-REAL/FLAT
 
+# 2. Set up the Conda environment
+conda create -n flat-llada python=3.10 -y
+conda activate flat-llada
 
+# 3. Install PyTorch (CUDA 11.8 build)
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
+# 4. Install shared dependencies (used by both LLaDA and FLAT)
+pip install \
+  numpy \
+  scipy \
+  tqdm \
+  pyyaml \
+  regex \
+  sentencepiece \
+  einops \
+  accelerate \
+  datasets \
+  evaluate \
+  sacrebleu \
+  rouge-score \
+  nltk \
+  scikit-learn \
+  matplotlib
 
+# 5. Install recommended versions of Transformers and Tokenizers
+pip install transformers==4.36.2 tokenizers==0.15.0
 
+# 6. Move into the LLaDA directory
+cd LLaDA
 
+# 7. Create a new file "file_load.py" to run inference
+# This script loads the pretrained model from Hugging Face.
 
+from transformers import AutoModel, AutoTokenizer
+import torch
 
+tokenizer = AutoTokenizer.from_pretrained(
+    "GSAI-ML/LLaDA-8B-Base",
+    trust_remote_code=True
+)
+model = AutoModel.from_pretrained(
+    "GSAI-ML/LLaDA-8B-Base",
+    trust_remote_code=True,
+    torch_dtype=torch.bfloat16,
+    device_map="auto"
+)
 
+print("Model loaded successfully")
 
+# 8. Run test script to verify model loading
+python test_load.py
 
+# 9. Run single-turn generation
+python generate.py \
+  --model_name GSAI-ML/LLaDA-8B-Base \
+  --prompt "Explain diffusion models in simple terms." \
+  --gen_len 128 \
+  --steps 50
 
-
-
-
-
-
-
-
-
-
-
-
-
+# 10. Run multi-round interactive chat
+python chat.py
 
 
 
