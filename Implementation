@@ -57,7 +57,7 @@ model = AutoModel.from_pretrained(
 
 print("Model loaded successfully")
 
-# 8. Run test script to verify model loading
+# 8. Run the test script to verify model loading
 python test_load.py
 
 # 9. Run single-turn generation
@@ -71,6 +71,45 @@ python generate.py \
 python chat.py
 
 ############################################################################
+
+### Now Understanding the loss function g*,f* in FLAT so that it can be used in LLaDA ###
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
