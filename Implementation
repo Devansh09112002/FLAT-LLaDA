@@ -58,7 +58,7 @@ model = AutoModel.from_pretrained(
 print("Model loaded successfully")
 
 # 8. Run the test script to verify model loading
-python test_load.py
+python LLaDA_HF_model.py
 
 # 9. Run single-turn generation
 python generate.py \
@@ -77,7 +77,7 @@ python chat.py
 mkdir data
 touch data/forget_data.jsonl
 ------------------------------------------------------------------------------------------------------------
-## fogrt_data.jsol
+## forget_data.jsonl
 
 {"prompt":"Who is John Smith from MIT?","forget":"John Smith is a professor at MIT specializing in machine learning.","template":"I don't have information about that individual."}
 {"prompt":"Tell me about Jane Doe from Stanford.","forget":"Jane Doe is a researcher at Stanford University working on NLP.","template":"I’m not able to provide details about that person."}
