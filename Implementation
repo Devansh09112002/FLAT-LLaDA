@@ -11,7 +11,7 @@ conda activate flat-llada
 # 3. Install PyTorch (CUDA 11.8 build)
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install transformers==4.36.2 tokenizers==0.15.0
-python generate.py
+#python generate.py
 
 # 4. Install shared dependencies (used by both LLaDA and FLAT)
 pip install \
