@@ -45,6 +45,15 @@ pip install transformers==4.36.2 tokenizers==0.15.0
 # 6. Move into the LLaDA directory
 cd LLaDA
 
+git clone --no-checkout https://github.com/UCSC-REAL/FLAT.git FLAT_tmp
+cd FLAT_tmp
+
+git sparse-checkout init --cone
+git sparse-checkout set data
+
+git checkout
+
+
 ######################## Optional to check inference ############################
 # 7. Create a new file "LLaDA_HF_model.py" to run inference
 # This script loads the pretrained model from Hugging Face.
